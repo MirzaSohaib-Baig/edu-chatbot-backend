@@ -1,0 +1,35 @@
+version: "3.1"
+
+rules:
+
+- rule: Say hello anytime the user says hello
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+# - rule: If asked about quiz then provide that even if the subject is not provided then you should use the very recent subject for the quiz that was stored in the slot
+#   steps:
+#   - intent: quiz_me
+#   - action: action_fetch_quiz
+#   - intent: quiz_answer
+#   - action: action_verify_answer
+
+- rule: If asked about schedule a tutoring session then provide that even if the subject is not provided then you should use the very recent subject for the schedule that was stored in the slot
+  steps:
+  - intent: schedule_tutoring_session
+  - action: action_schedule_session
+
+- rule: Ask for clarification when intent is unclear
+  steps:
+    - intent: nlu_fallback
+    - action: utter_ask_rephrase

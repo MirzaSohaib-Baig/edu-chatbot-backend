@@ -1,0 +1,143 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: ask_math_help
+  examples: |
+    - I need help with my math homework
+    - Can you help me with math?
+    - I have a math question
+    - Help me with a math problem
+    - Can you solve a math question?
+- intent: provide_question
+  examples: |
+    - What is 2 + 2?
+    - How do I solve this equation: 3x + 5 = 11?
+    - I need help with quadratic equations
+    - What is the area of a circle?
+- intent: schedule_tutoring_session
+  examples: |
+    - I want to schedule a tutoring session on [math](subject)
+    - Can you schedule a session of [english](subject] for me?
+    - I need a tutoring session for [science](subject)
+    - Schedule a study session for me on [physics](subject)
+    - Can you book a class for me on [math](subject)
+    - can you schedule a session for me on [math](subject)
+    - schedule a session [english](subject)
+- intent: quiz_me
+  examples: |
+    - Can you quiz me on [math](subject)?
+    - I want to take a quiz on [english](subject)
+    - Give me a [math](subject) quiz
+    - Test my knowledge in [physics](subject)
+    - quiz me on [english](subject)
+    - take a quiz on [math](subject)
+    - take another quiz on [history](subject)
+    - take a quiz on [history](subject)
+    - take a quiz
+    - take a quiz on [english](subject)
+    - quiz on [history](subject)
+- intent: quiz_answer
+  examples: |
+    - The answer is [42](right_answer)
+    - Its [Washington DC](right_answer)
+    - It means [same thing in reverse](right_answer)
+    - [Mars](right_answer).
+    - [Neil Armstrong](right_answer).
+    - [Descriptive Word](right_answer)
+    - [x = 2](right_answer)
+    - [1967](right_answer)
+    - [Constantinople](right_answer)
+    - [Words that Sound the Same](right_answer)
+    - [Neil](right_answer)
+- intent: ask_top_institutes
+  examples: |
+    - Can you tell me the top [5](total_number) universities?
+    - What are the [2](total_number) top institutes in Asia?
+    - Name the best [10](total_number) institutes globally
+    - Show me the [3](total_number) best universities
+    - list down [5](total_number) rising institutes
+    - top [2](total_number) institutes
+- regex: total_number
+  examples: |
+    - \d{1,2}
