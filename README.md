@@ -1,7 +1,3 @@
-Here's a modified version of the README for the **EDU-Chatbot Backend**, which is built on Rasa:
-
----
-
 # EDU-Chatbot Backend
 
 Get started with AI Genius Backend! This open-source, AI-powered chatbot backend is designed specifically for education and e-learning platforms, enabling seamless integration of quizzes, interactive learning, and course guidance via AI. Powered by Rasa, this template offers a flexible and scalable backend for educational applications.
