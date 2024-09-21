@@ -23,21 +23,12 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: help with math
+- story: help with subject
   steps:
-  - intent: ask_math_help
-  - action: action_ask_question
+  # - intent: ask_math_help
+  # - action: action_ask_question
   - intent: provide_question
   - action: action_provide_solution
-
-- story: schedule tutoring session
-  steps:
-  - intent: schedule_tutoring_session
-    entities:
-      - subject: math
-  - slot_was_set:
-      - course: math
-  - action: action_schedule_session
 
 - story: quiz student 1
   steps:
@@ -78,61 +69,91 @@ stories:
       - total_institutes: 5
   - action: action_fetch_top_institutes
   
-- story: interactive_story_1
-  steps:
-  - intent: quiz_me
-    entities:
-    - subject: english
-  - slot_was_set:
-    - course: english
-  - slot_was_set:
-    - question: quiz me on english
-  - action: action_fetch_quiz
-  - slot_was_set:
-    - correct_answer: Descriptive Word
-  - intent: ask_top_institutes
-  - slot_was_set:
-    - question: Descriptive Word
-  - intent: quiz_answer
-    entities:
-    - right_answer: Descriptive Word
-  - action: action_verify_answer
-  - slot_was_set:
-    - correct_answer: null
-  - intent: quiz_me
-    entities:
-    - subject: math
-  - slot_was_set:
-    - course: math
-  - slot_was_set:
-    - question: take a quiz on math
-  - action: action_fetch_quiz
-  - slot_was_set:
-    - correct_answer: x = 2
-  - intent: provide_question
-  - slot_was_set:
-    - question: x = 2
-  - intent: quiz_answer
-    entities:
-    - right_answer: x = 2
-  - action: action_verify_answer
-  - slot_was_set:
-    - correct_answer: null
-  - intent: quiz_me
-  - slot_was_set:
-    - question: take another quiz on history
-  - intent: quiz_me
-    entities:
-    - subject: history
-  - action: action_fetch_quiz
-  - slot_was_set:
-    - correct_answer: '1945'
-  - intent: provide_question
-  - slot_was_set:
-    - question: '1967'
-  - intent: quiz_answer
-    entities:
-    - right_answer: '1967'
-  - action: action_verify_answer
-  - slot_was_set:
-    - correct_answer: null
+# - story: interactive_story_1
+#   steps:
+#   - intent: quiz_me
+#     entities:
+#     - subject: english
+#   - slot_was_set:
+#     - course: english
+#   - slot_was_set:
+#     - question: quiz me on english
+#   - action: action_fetch_quiz
+#   - slot_was_set:
+#     - correct_answer: Descriptive Word
+#   - intent: ask_top_institutes
+#   - slot_was_set:
+#     - question: Descriptive Word
+#   - intent: quiz_answer
+#     entities:
+#     - right_answer: Descriptive Word
+#   - action: action_verify_answer
+#   - slot_was_set:
+#     - correct_answer: null
+#   - intent: quiz_me
+#     entities:
+#     - subject: math
+#   - slot_was_set:
+#     - course: math
+#   - slot_was_set:
+#     - question: take a quiz on math
+#   - action: action_fetch_quiz
+#   - slot_was_set:
+#     - correct_answer: x = 2
+#   - intent: provide_question
+#   - slot_was_set:
+#     - question: x = 2
+#   - intent: quiz_answer
+#     entities:
+#     - right_answer: x = 2
+#   - action: action_verify_answer
+#   - slot_was_set:
+#     - correct_answer: null
+#   - intent: quiz_me
+#   - slot_was_set:
+#     - question: take another quiz on history
+#   - intent: quiz_me
+#     entities:
+#     - subject: history
+#   - action: action_fetch_quiz
+#   - slot_was_set:
+#     - correct_answer: '1945'
+#   - intent: provide_question
+#   - slot_was_set:
+#     - question: '1967'
+#   - intent: quiz_answer
+#     entities:
+#     - right_answer: '1967'
+#   - action: action_verify_answer
+#   - slot_was_set:
+#     - correct_answer: null
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: provide_question
+#     entities:
+#     - total_number: '12'
+#   - slot_was_set:
+#     - question: What is 12 times 12?
+#   - slot_was_set:
+#     - total_institutes: '12'
+#   - intent: provide_question
+#   - action: action_provide_solution
+#   - intent: provide_question
+#     entities:
+#     - total_number: '8'
+#   - slot_was_set:
+#     - question: What is 8 divided by 2?
+#   - slot_was_set:
+#     - total_institutes: '8'
+#   - intent: provide_question
+#   - action: action_provide_solution
+#   - intent: provide_question
+#     entities:
+#     - total_number: '3'
+#   - slot_was_set:
+#     - question: What is 3 raised to the power of 3?
+#   - slot_was_set:
+#     - total_institutes: '3'
+#   - intent: provide_question
+#   - action: action_provide_solution

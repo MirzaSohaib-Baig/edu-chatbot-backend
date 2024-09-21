@@ -1,7 +1,7 @@
 version: '3.1'
+
 intents:
 - affirm
-- ask_math_help
 - ask_top_institutes
 - bot_challenge
 - deny
@@ -12,60 +12,73 @@ intents:
 - provide_question
 - quiz_answer
 - quiz_me
-- schedule_tutoring_session
+
 entities:
 - right_answer
 - total_number
 - subject
 - question
+
 slots:
+
   course:
     type: text
     influence_conversation: true
     mappings:
     - type: from_entity
       entity: subject
+
   question:
     type: text
     influence_conversation: true
     mappings:
     - type: from_text
+
   total_institutes:
-    type: text
+    type: float
     influence_conversation: true
     mappings:
     - type: from_entity
       entity: total_number
+
   correct_answer:
     type: text
     influence_conversation: true
     mappings:
     - type: from_entity
       entity: right_answer
+
 responses:
   utter_greet:
   - text: Hello, I am AI Genius ready to assist you. How can I help you?
+
   utter_cheer_up:
   - text: 'Here is something to cheer you up:'
     image: https://i.imgur.com/nGF1K8f.jpg
+
   utter_did_that_help:
   - text: Did that help you?
+
   utter_happy:
   - text: Great, carry on!
+
   utter_goodbye:
   - text: Bye
+
   utter_iamabot:
   - text: I am a bot known as AI Genius.
+
   utter_ask_rephrase:
   - text: Sorry, can you rephrase that?
+
 actions:
 - utter_greet
 - action_verify_answer
 - action_fetch_top_institutes
 - action_fetch_quiz
-- action_schedule_session
-- action_ask_question
+# - action_ask_question
 - action_provide_solution
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

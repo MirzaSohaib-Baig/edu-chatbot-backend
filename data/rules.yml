@@ -24,10 +24,10 @@ rules:
 #   - intent: quiz_answer
 #   - action: action_verify_answer
 
-- rule: If asked about schedule a tutoring session then provide that even if the subject is not provided then you should use the very recent subject for the schedule that was stored in the slot
+- rule: If asked to provide top institutes then provide that. This is only applicable if only one number is provided
   steps:
-  - intent: schedule_tutoring_session
-  - action: action_schedule_session
+  - intent: ask_top_institutes
+  - action: action_fetch_top_institutes
 
 - rule: Ask for clarification when intent is unclear
   steps:

@@ -35,7 +35,7 @@ def get_top_institutes(number_of_universities):
         top_institutes.append(response_message)
 
     # Prepare the response
-    response_message = "Here are the top universities:\n<br><br>" + "\n<br><br>".join(top_institutes)
+    response_message = f"Here are the top {number_of_universities} universities:\n<br><br>" + "\n<br><br>".join(top_institutes)
 
     return response_message
 

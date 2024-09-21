@@ -18,7 +18,10 @@ class ActionTopInstitutes(Action):
         # Dummy quiz; in practice, fetch from a database or an API
         top_institutes = tracker.get_slot("total_institutes")
         debug_issue(top_institutes)
-        list_of_institutes = get_top_institutes(int(top_institutes))
-        debug_issue(list_of_institutes)
-        dispatcher.utter_message(text=list_of_institutes)
+        if top_institutes is not None:
+            list_of_institutes = get_top_institutes(int(top_institutes))
+            debug_issue(list_of_institutes)
+            dispatcher.utter_message(text=list_of_institutes)
+        else:
+            dispatcher.utter_message(text="Provide a valid number.")
         return []
