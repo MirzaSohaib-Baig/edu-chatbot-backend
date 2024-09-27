@@ -115,8 +115,9 @@ nlu:
     - Can you quiz me on [math](subject)?
     - I want to take a quiz on [english](subject)
     - Give me a [math](subject) quiz
-    - Test my knowledge in [physics](subject)
+    - Test my knowledge in [science](subject)
     - quiz me on [english](subject)
+    - Provide a short quiz on [history](subject)
 
 - intent: quiz_answer
   examples: |
@@ -125,7 +126,7 @@ nlu:
     - It means [same thing in reverse](right_answer)
     - [Mars](right_answer).
     - [Neil Armstrong](right_answer).
-    - [Descriptive Word](right_answer)
+    - Its a [descriptive word](right_answer)
 
 - intent: ask_top_institutes
   examples: |

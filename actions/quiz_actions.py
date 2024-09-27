@@ -5,12 +5,13 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 import pandas as pd
 from show_result.show_debug import debug_issue
-from controller.institute import getSubject
+from controller.institute import getSubject, getAnswers
 
 subject_df = pd.read_csv('quiz_data/quizes.csv',sep=',', header=None, names=['Subject', 'Question', 'Answer', 'Explanation'])
 #print(quiz_list.head(2))
 debug_issue(subject_df.head())
 subject_list = list(subject_df['Subject'])
+answer_list = list(subject_df['Answer'])
 
 # Fetching a quiz from an external source
 class ActionFetchQuiz(Action):
@@ -62,20 +63,22 @@ class ActionVerifyAnswer(Action):
         # user_answer = tracker.latest_message['text']  # User's answer
         user_answer = tracker.latest_message["text"]  # User's answer
         debug_issue(f"user_answer: {user_answer}")
+
+        extracted_answer = getAnswers(user_answer, answer_list)
+        debug_issue(f"extracted_answer: {extracted_answer}")
+
         correct_answer = tracker.get_slot('correct_answer')
         debug_issue(f"correct_answer: {correct_answer}")
 
         # Fetch the explanation from the CSV file
-        # subject = tracker.get_slot("course")
-        # subject_questions = subject_df[subject_df['Subject'] == subject]
-        # question_row = subject_questions[subject_questions['Answer'] == correct_answer].iloc[0]
-        # explanation = question_row['Explanation']
+        answer_row = subject_df[subject_df['Answer'] == correct_answer]
+        explanation = answer_row.iloc[0]['Explanation']
 
-        # Check if the user's answer matches the correct answer
-        if user_answer == correct_answer:
+        if extracted_answer and extracted_answer[0] in answer_list and extracted_answer[0] == correct_answer:
+            debug_issue(f"Detected answer: {user_answer}.")
             dispatcher.utter_message(text="Correct!")
         else:
-            # dispatcher.utter_message(text=f"Incorrect. The correct answer is {correct_answer}. <br><br><strong>Explanation:</strong><br><br>{explanation}")
-            dispatcher.utter_message(text=f"Incorrect. The correct answer is {correct_answer}.")
+            dispatcher.utter_message(text=f"Incorrect. The correct answer is {correct_answer}. <br><br><strong>Explanation:</strong><br><br>{explanation}")
+
         
         return [SlotSet("correct_answer", None)]

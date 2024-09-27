@@ -30,7 +30,7 @@ stories:
   - intent: provide_question
   - action: action_provide_solution
 
-- story: quiz student 1
+- story: take quiz
   steps:
   - intent: quiz_me
     entities:
@@ -45,7 +45,7 @@ stories:
       - correct_answer: "5"
   - action: action_verify_answer
 
-- story: quiz student 2
+- story: take quiz 2
   steps:
   - intent: quiz_me
     entities:
