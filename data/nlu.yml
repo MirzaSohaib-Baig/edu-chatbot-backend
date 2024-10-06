@@ -1,6 +1,6 @@
 version: "3.1"
-nlu:
 
+nlu:
 - intent: greet
   examples: |
     - hey
@@ -17,85 +17,13 @@ nlu:
     - goodevening
     - good afternoon
 
-- intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
+    - are you a bot or a human?
     - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
-# - intent: ask_math_help
-#   examples: |
-#     - I need help with my math homework
-#     - Can you help me with math?
-#     - I have a math question
-#     - Help me with a math problem
-#     - Can you solve a math question?
+    - who are you?
+    - are you human?
 
 - intent: provide_question
   examples: |
@@ -109,25 +37,7 @@ nlu:
     - What is 12 times 12?
     - What is 8 divided by 2?
     - What is 3 raised to the power of 3?
-
-- intent: quiz_me
-  examples: |
-    - Can you quiz me on [math](subject)?
-    - I want to take a quiz on [english](subject)
-    - Give me a [math](subject) quiz
-    - Test my knowledge in [science](subject)
-    - quiz me on [english](subject)
-    - Provide a short quiz on [history](subject)
-
-- intent: quiz_answer
-  examples: |
-    - The answer is [42](right_answer)
-    - Its [Washington DC](right_answer)
-    - It means [same thing in reverse](right_answer)
-    - [Mars](right_answer).
-    - [Neil Armstrong](right_answer).
-    - Its a [descriptive word](right_answer)
-
+    
 - intent: ask_top_institutes
   examples: |
     - Can you tell me the top [5](total_number) universities?
@@ -137,6 +47,11 @@ nlu:
     - list down [5](total_number) rising institutes
     - top [2](total_number) institutes
 
-# - regex: total_number
-#   examples: |
-#     - \d{1,2}
+- intent: ask_course_info
+  examples: |
+    - What are the courses offered by [NIT](institute_name)?
+    - Provide a list of [Harvard University](institute_name) courses
+    - What are the courses offered by [Karachi University](institute_name)?
+    - Currently what courses are offered by [Stanford University](institute_name)?
+    - What are the courses offered by [IIT Bombay](institute_name)?
+    - Courses that are being offered by [IIT Kanpur](institute_name)

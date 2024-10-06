@@ -1,26 +1,19 @@
 version: '3.1'
 
 intents:
-- affirm
 - ask_top_institutes
 - bot_challenge
-- deny
-- goodbye
 - greet
-- mood_great
-- mood_unhappy
 - provide_question
-- quiz_answer
-- quiz_me
+- ask_course_info
 
 entities:
-- right_answer
-- total_number
 - subject
+- total_number
 - question
+- institute_name
 
 slots:
-
   course:
     type: text
     influence_conversation: true
@@ -40,30 +33,17 @@ slots:
     mappings:
     - type: from_entity
       entity: total_number
-
-  correct_answer:
+  
+  university_name:
     type: text
     influence_conversation: true
     mappings:
     - type: from_entity
-      entity: right_answer
+      entity: institute_name
 
 responses:
   utter_greet:
   - text: Hello, I am AI Genius ready to assist you. How can I help you?
-
-  utter_cheer_up:
-  - text: 'Here is something to cheer you up:'
-    image: https://i.imgur.com/nGF1K8f.jpg
-
-  utter_did_that_help:
-  - text: Did that help you?
-
-  utter_happy:
-  - text: Great, carry on!
-
-  utter_goodbye:
-  - text: Bye
 
   utter_iamabot:
   - text: I am a bot known as AI Genius.
@@ -73,11 +53,9 @@ responses:
 
 actions:
 - utter_greet
-- action_verify_answer
 - action_fetch_top_institutes
-- action_fetch_quiz
-# - action_ask_question
 - action_provide_solution
+- action_provide_courses
 
 session_config:
   session_expiration_time: 60
