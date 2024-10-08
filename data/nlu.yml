@@ -50,8 +50,19 @@ nlu:
 - intent: ask_course_info
   examples: |
     - What are the courses offered by [NIT](institute_name)?
+    - What are the courses offered by [Cambridge](institute_name)?
+    - What courses are offered by [Oxford](institute_name)?
     - Provide a list of [Harvard University](institute_name) courses
     - What are the courses offered by [Karachi University](institute_name)?
     - Currently what courses are offered by [Stanford University](institute_name)?
     - What are the courses offered by [IIT Bombay](institute_name)?
     - Courses that are being offered by [IIT Kanpur](institute_name)
+    - Can you tell me about [University of Chicago](institute_name)?
+    - What programs does [Caltech](institute_name) offer?
+    - What are the courses offered by [Princeton University](institute_name)?
+    - What courses are offered by [University of Pennsylvania](institute_name)?
+    - What courses are offered by [University of California](institute_name)?
+    - What courses are offered by [University of Washington](institute_name)?
+    - What courses are offered by [University of Michigan](institute_name)?
+    - What courses are being offered by [University of Colorado](institute_name)?
+    - What courses are being offered by [University of Illinois](institute_name)?

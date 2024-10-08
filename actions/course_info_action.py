@@ -2,6 +2,7 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
 from controller.institute import get_courses
 from show_result.show_debug import debug_issue
 
@@ -24,4 +25,4 @@ class ActionTopInstitutes(Action):
             dispatcher.utter_message(text=list_of_courses)
         else:
             dispatcher.utter_message(text="Provide a valid institute name.")
-        return []
+        return [SlotSet("university_name", None)]
