@@ -55,3 +55,29 @@ class StudyPlanSkill(PromptSkill):
         "by day for short plans) with focused tasks, spaced revision, practice tests and a buffer "
         "day. Order topics from foundations to hardest, and end with tips to stay on track."
     )
+
+class InstituteSkill(PromptSkill):
+    name = "institute"
+    description = (
+        "Information about universities, colleges, schools, institutes, online platforms or "
+        "educational organizations."
+    )
+    instructions = (
+        "Provide general information about the institute: location, type (public/private), "
+        "programs offered, reputation, and notable achievements. Avoid giving specific fees, "
+        "deadlines, or entry requirements as these can change; instead, advise the student to "
+        "check the official website for the most accurate and up-to-date information."
+    )
+
+class CourseSkill(PromptSkill):
+    name = "course"
+    description = (
+        "Information about specific courses, classes, or training programs offered by educational "
+        "institutions or online platforms."
+    )
+    instructions = (
+        "Provide general information about the course: overview, objectives, duration, prerequisites, "
+        "and key topics covered. Avoid giving specific fees, deadlines, or entry requirements as these "
+        "can change; instead, advise the student to check the official course page for the most accurate "
+        "and up-to-date information."
+    )

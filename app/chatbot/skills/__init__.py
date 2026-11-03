@@ -2,7 +2,7 @@ from app.config import Settings
 
 from .base import PromptSkill, Skill, SkillContext
 from .general import ChatSkill, GuidanceSkill
-from .learning import CurriculumSkill, ExplainSkill, SolveSkill, StudyPlanSkill
+from .learning import CurriculumSkill, ExplainSkill, SolveSkill, StudyPlanSkill, InstituteSkill, CourseSkill
 from .quiz import QuizAnswerSkill, QuizSkill
 from .registry import SkillRegistry
 
@@ -19,6 +19,8 @@ def default_registry(settings: Settings) -> SkillRegistry:
             GuidanceSkill(),
             QuizSkill(settings),
             QuizAnswerSkill(),
+            InstituteSkill(),
+            CourseSkill(),
         ]
     )
 
